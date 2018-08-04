@@ -1,0 +1,9 @@
+{
+  "database": {
+    "host": "localhost",
+    "user": "root",
+    "password": "Crxzy@123520",
+    "database": "video",
+    "port": "3306"
+  }
+}
