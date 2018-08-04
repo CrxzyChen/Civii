@@ -112,4 +112,5 @@ let TouchBase = function (options = {}) {
         return {
             touchBase: touchBase
         }
-    };
+    }
+};
