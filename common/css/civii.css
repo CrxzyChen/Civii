@@ -315,6 +315,14 @@ li, ul {
     opacity: 0;
 }
 
+.player-container .player-box .display .state-icon i.active {
+    display: block;
+}
+
+.player-container .player-box .display .load-layer.hide {
+    display: none;
+}
+
 .player .bofqi {
     height: 9.00267rem;
 }
@@ -452,12 +460,80 @@ li, ul {
     display: none;
 }
 
+.player-container .player-box .display .control-bar .control-volume-slider .ui-slider-container {
+    top: .7666176rem;
+    right: .333312rem;
+    left: 0;
+    height: .333312rem;
+}
+
+.player-container .player-box .display .control-bar .control-volume-slider.hide {
+    display: none;
+}
+
+.player-container .player-box .display .control-bar .control-volume-slider {
+    display: inline-block;
+    width: 2.666496rem;
+    height: 1.8665472rem;
+    position: relative;
+}
+
+.player-container .player-box .display .control-bar .control-btn.active {
+    color: #ccc;
+}
+
+.player-container .player-box .display .control-bar .control-slider .ui-slider-tracker {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    border-style: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #4c4c4c;
+}
+
+.player-container .player-box.wide {
+    position: fixed;
+    width: auto;
+    height: auto;
+}
+
+.player-container .player-box .display .state-icon.hide {
+    display: none;
+}
+
+.player-icon.icon-comment.icon-widescreen, .player-icon.icon-widescreen.icon-widescreen {
+    background-image: url(../img/fullscreen.png);
+}
+
+.player-icon.icon-comment.icon-comment, .player-icon.icon-widescreen.icon-comment {
+    background-image: url(../img/commit.png);
+}
+
+.active > .player-icon.icon-comment {
+    background-image: url(../img/commit-closed.png);
+}
+
+.player-icon.icon-comment, .player-icon.icon-widescreen, .player-icon.icon-fullscreen{
+    content: "";
+    display: block;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+}
+
 .player-container .player-box .display .control-bar .control-btn {
     height: 1.024rem;
-    margin-top: .42667rem;
+    text-align: center;
+    vertical-align: top;
     background-color: transparent;
     color: #585858;
     width: 1.024rem;
+    margin-top: .512rem;
     margin-left: 1.024rem;
 }
 
@@ -483,11 +559,16 @@ li, ul {
 }
 
 .player-container .player-box .display .control-bar > .right {
-    width: 4.608rem;
     height: 100%;
     float: right;
     font-size: 0;
+    margin-right: .512rem;
     cursor: default;
+}
+
+.player-container .player-box .display .control-bar > .right > * {
+    font-size: 1rem;
+    display: inline-block;
 }
 
 .player-container .player-box .display .control-bar .control-slider {
@@ -1000,7 +1081,7 @@ li, ul {
     vertical-align: .04266667rem;
 }
 
-.recommend *, .comment *, .part-list * {
+.recommend *, .comment *, .part-list *, .player * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -1016,6 +1097,9 @@ li, ul {
 }
 
 /*part_list*/
+.slider-content {
+    display: inline-block;
+}
 
 .ep-list-pre-wrapper {
     width: 100%;
@@ -1073,7 +1157,7 @@ li, ul {
     width: 100%;
 }
 
-.slider-wrapper .slider-content {
+.slider-wrapper {
     overflow: hidden;
 }
 
