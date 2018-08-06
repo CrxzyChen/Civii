@@ -6,7 +6,7 @@
  * Time: 21:43
  */
 
-class ViewController extends ControllerBase
+class ViewController extends Controller
 {
     public function index()
     {

@@ -1,9 +1,10 @@
 {
   "database": {
+    "dsn": "mysql:host=localhost;dbname=civii;charset:utf-8",
     "host": "localhost",
     "user": "root",
     "password": "Crxzy@123520",
-    "database": "video",
+    "database": "civii",
     "port": "3306"
   }
 }

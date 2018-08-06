@@ -4,82 +4,47 @@
         <p>所有视频</p>
     </div>
     <div class="video-nav">
-        <a>
+        <a v-for="item in list">
             <div class="image-container">
                 <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
+                <img class="cover" v-bind:src="item.src"/>
             </div>
             <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
-            </div>
-        </a>
-        <a>
-            <div class="image-container">
-                <img src="{__HOST_ROOT__}common/img/tv.png" class="tv"/>
-                <img class="cover"/>
-            </div>
-            <div class="title">
-                <p>test</p>
+                <p>{{item.title}}</p>
             </div>
         </a>
     </div>
-    <div class="load-more">
+    <div class="load-more" v-on:click="loadMore">
         <p>
             点击加载更多
         </p>
     </div>
 </div>
+<script>
+    let video_nav = new Vue({
+        el: '.content',
+        data: {
+            list: [
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'}
+            ]
+        },
+        methods: {
+            loadMore: function (event) {
+
+                this.list = this.list.concat([
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'},
+                    {title: 'test', src: '{__HOST_ROOT__}common/img/bba0351ee12e972366034eebf3cf7a66640fffb3.jpg'}
+                ])
+            }
+        }
+    })
+</script>

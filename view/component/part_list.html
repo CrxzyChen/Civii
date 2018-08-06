@@ -8,10 +8,11 @@
             <div class="slider-wrapper">
                 <div class="slider-content">
                     <ul class="ep-list-pre-container no-wrap">
-                        <li  v-for="item in list" class="episode-item item-lg" v-bind:class="{cur:item.part_num===current_part}">
-                            <a href="javascript:;" class="ep-info-wrapper">
+                        <li v-for="(item,key) in list" class="episode-item item-lg"
+                            v-bind:class="{cur:item.part_num===current_part}">
+                            <a v-on:click="changePart(key)" href="javascript:;" class="ep-info-wrapper">
                                 <h4>第{{ item.part_num }}话</h4>
-                                <p>{{ item.title }}</p>
+                                <p>{{ item.sub_title }}</p>
                             </a>
                         </li>
                     </ul>
@@ -27,25 +28,3 @@
         </div>
     </div>
 </div>
-<script>
-    let partList = new Vue({
-        el:'.part-list',
-        data:{
-            count:4,
-            current_part:1,
-            list:[
-                {part_num:1,title:'统治者的忧郁'},
-                {part_num:2,title:'再访卡恩村'},
-                {part_num:3,title:'安莉动荡又匆忙的生活'},
-                {part_num:4,title:'东方巨人、西方魔蛇'},
-            ]
-        }
-    });
-    let myScroll = new IScroll('.slider-wrapper', {
-        scrollY:false,
-        scrollX: true,
-        fadeScrollbars:true,
-        scrollbars:true,
-    });
-
-</script>

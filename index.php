@@ -7,7 +7,7 @@
  */
 if (file_exists('config.json')) {
     $config_json = file_get_contents('config.json');
-    $config = json_decode($config_json);
+    $GLOBALS['config'] =  json_decode($config_json);
 } else {
     die('config.json is not exist!');
 }
@@ -15,6 +15,7 @@ if (file_exists('config.json')) {
 define("HOST_ROOT", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_ADDR'] . ($_SERVER['SERVER_PORT'] == '80' ? '' : ":{$_SERVER['SERVER_PORT']}") . dirname($_SERVER['SCRIPT_NAME']) . '/');
 define('SCRIPT_ROOT', dirname($_SERVER['SCRIPT_FILENAME']));
 define('CONTROLLER_PATH', SCRIPT_ROOT . '/' . 'controller' . '/');
+define('MODEL_PATH', SCRIPT_ROOT . '/' . 'model' . '/');
 define('VIEW_PATH', SCRIPT_ROOT . '/' . 'view' . '/');
 define('LAYOUT_PATH', VIEW_PATH . 'layout' . '/');
 define('COMPONENT_PATH', VIEW_PATH . 'component' . '/');
@@ -36,9 +37,16 @@ if (isset($_GET['args'])) {
 
 function auto_load_func($classname)
 {
-    $script = CONTROLLER_PATH . $classname . '.php';
-    if (file_exists($script)) {
-        require_once $script;
+    if (strpos($classname, 'Model') || $classname === 'Model') {
+        $script = MODEL_PATH . $classname . '.php';
+        if (file_exists($script)) {
+            require_once $script;
+        }
+    } else if (strpos($classname, 'Controller') || $classname === 'Controller') {
+        $script = CONTROLLER_PATH . $classname . '.php';
+        if (file_exists($script)) {
+            require_once $script;
+        }
     }
 }
 

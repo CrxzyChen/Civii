@@ -3,30 +3,30 @@
         <div class="clearfix">
             <div class="ep-info-left">
                 <div class="ep-info-image">
-                    <img src="{__HOST_ROOT__}common/img/b308ed7b60b8f7ff70f8a122adeb75914702611f.jpg" alt="OVERLORD Ⅲ">
+                    <img v-bind:src="group_cover" alt="OVERLORD Ⅲ">
                 </div>
             </div>
             <div class="ep-info-center">
-                <div class="ep-info-title">OVERLORD Ⅲ</div>
+                <div class="ep-info-title">{{group_title}}</div>
                 <div class="ep-info-data clearfix">
                     <div class="play">
-                        <span>2856.1万次观看</span>
+                        <span>{{hot}}次观看</span>
                     </div>
                     <div class="fav">
-                        <span>266.9万追番</span>
+                        <span>{{mark}}追番</span>
                     </div>
                 </div>
-                <div class="ep-info-state">连载中, 每周二22:30更新</div>
+                <div class="ep-info-state">{{update_time}}</div>
                 <div class="ep-profile clearfix">
-                    <span>时间为2138年。曾卷起一大风潮的虚拟现实体感型网络游戏《YGGDRASIL》即将迎来停服。玩家飞鼠在曾经以同伴和荣华自傲的根据地纳萨力克地下大坟墓，独自一人安静等待着那一刻。但是，不料发生了“过了结束时间却还没有登出”的异常事态。NPC们开始以自己的意志行动，不止如此，纳萨力克之外展开了从未见过的异世界。飞鼠为了寻找过去的同伴，以公会名安兹·乌尔·恭自称，决定在异世界扬名立万。他与宣誓绝对忠诚的部下一同，向新的地域进军。</span>
+                    <span>{{brief}}</span>
                     <i></i>
                 </div>
             </div>
             <div class="media-info-right">
                 <div class="media-score">
-                    <span class="score">9.7</span><span>分</span>
+                    <span class="score">{{score}}</span><span>分</span>
                 </div>
-                <div class="review-count">2.4万人</div>
+                <div class="review-count">{{commit_num}}人</div>
             </div>
         </div>
         <div class="media-option-tab">

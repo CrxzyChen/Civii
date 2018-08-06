@@ -6,7 +6,7 @@
  * Time: 22:46
  */
 
-class ControllerBase
+class Controller
 {
     public $view = '';
     public $is_layout = False;
